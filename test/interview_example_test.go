@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestInterviewExample(t *testing.T) {
+func TestInterviewChallenge(t *testing.T) {
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../",
 	}
@@ -18,5 +18,6 @@ func TestInterviewExample(t *testing.T) {
 
 	output := terraform.Output(t, terraformOptions, "interview_example_public_ip")
 
+	// Now fails,of course
 	assert.Equal(t, "Hello, World!", output)
 }

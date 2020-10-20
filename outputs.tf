@@ -6,4 +6,4 @@ output "interview_example_private_ip" {
   value = aws_instance.interview_example.private_ip
 }
 
-# TODO: Export Tags to ve asserted by terratest
+# TODO: Export Tags to be asserted by terratest

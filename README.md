@@ -1,11 +1,11 @@
-# Terraform Architecture - Flugel.it interview test
+# Terraform Architecture - Flugel.it interview challenge
 
-## Interview Test main description:
+## Interview challenge main description:
  - Creates a new EC2 instance
  - Creates a SG which only allows incoming SSH traffic.
  - Creates an S3 bucket [WIP]
  - Every resource has Name = 'Flugel' and Owner = 'InfraTeam' tag names.
- - Terratest script
+ - Terratest script included
 
 ## TODO:
  - Create the EC2 instance in a new VPC (ATM this script uses default VPC).
@@ -13,7 +13,7 @@
 
 ## Main resources created/managed:
 - EC2 instance named 'interview_example'
-- S3 bucket exam.interview.flugel.it
+- S3 bucket challenge.interview.flugel.it
 
 ## How to use this example:
 - [Install Terraform](https://www.terraform.io/downloads.html). It's just a binary, you leave it anywhere under the PATH variable.
@@ -21,7 +21,7 @@
 - Configure settings in the variables.tf file.
 
 ### Commands:
-- `go test -v -run TestInterviewExample` runs the terratest script
+- `go test -v -run TestInterviewChallenge` runs the terratest script
 - `terraform init` initializes the aws directory, installing all necessary plugins.
 - `terraform plan` syncs `terraform.tfstate` file against actual cloud state, shows the changes needed to make to the cloud (but doesn't do anything).
 - `terraform apply` applies the planned changes to the cloud.

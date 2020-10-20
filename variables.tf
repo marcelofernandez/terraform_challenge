@@ -16,7 +16,7 @@ variable "res_owner" {
   default = "InfraTeam"
 }
 
-# Dinamically search the latest Ubuntu 20.04 AMIs
+# Dinamically search latest Ubuntu 20.04 AMIs
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"] # Canonical
