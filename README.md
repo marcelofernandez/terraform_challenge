@@ -1,18 +1,19 @@
 # Terraform Architecture - Flugel.it interview challenge
 
 ## Interview challenge main description:
- - Creates a new EC2 instance
- - Creates a SG which only allows incoming SSH traffic.
+ - Creates a new VPC using 10.0.x.0/24 addresses in three different AZs
+ - Creates a new EC2 instance inside this VPC
+ - Creates a SG attached to the EC2 instance which only allows incoming SSH traffic.
  - Creates an S3 bucket [WIP]
  - Every resource has Name = 'Flugel' and Owner = 'InfraTeam' tag names.
- - Terratest script included
+ - Terratest script included [WIP]
 
 ## TODO:
- - Create the EC2 instance in a new VPC (ATM this script uses default VPC).
- - Only AWS cloud is supported, GCP and Azure is planned in the future.
+ - Github Actions flow definition, plus previous linting and testing.
+ - Only AWS cloud is supported.
 
 ## Main resources created/managed:
-- EC2 instance named 'interview_example'
+- EC2 instance named 'interview_challenge'
 - S3 bucket challenge.interview.flugel.it
 
 ## How to use this example:

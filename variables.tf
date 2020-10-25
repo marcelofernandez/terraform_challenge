@@ -1,19 +1,27 @@
-variable "aws_region" {
+# AWS VPC configuration
+variable aws_region {
   description = "The AWS region to deploy into"
   type        = string
   default     = "us-east-1"
 }
 
-variable "res_name" {
-  description = "The Name tag to set for the resources created"
-  type        = string
-  default     = "Flugel"
+variable "vpc_name" {
+  description = "The main VPC name"
+  default     = "VPC_IC"
 }
 
-variable "res_owner" {
-  description = "The owner of the resources created"
-  type = string
-  default = "InfraTeam"
+variable "vpc_cidr" {
+  description = "The VPC CIDR to use"
+  default     = "10.0.0.0/16"
+}
+
+variable "vpc_public_subnets" {
+  type = map
+  default = {
+    us-east-1a = "10.0.1.0/24"
+    us-east-1b = "10.0.2.0/24"
+    us-east-1c = "10.0.3.0/24"
+  }
 }
 
 # Dinamically search latest Ubuntu 20.04 AMIs
