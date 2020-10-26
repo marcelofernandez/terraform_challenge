@@ -6,8 +6,6 @@ output "interview_challenge_private_ip" {
   value = aws_instance.interview_challenge.private_ip
 }
 
-output "vpc_public_subnets" {
-  value = module.vpc.public_subnets
+output "inteview_challgenge_instance_id" {
+  value = aws_instance.interview_challenge.id
 }
-
-# TODO: Export Tags to be asserted by terratest
