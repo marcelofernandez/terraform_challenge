@@ -20,9 +20,10 @@
 - [Install Terraform](https://www.terraform.io/downloads.html). It's just a binary, you leave it anywhere under the PATH variable.
 - Configure AWS credentials in ~/.aws/ or export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
 - Configure settings in the variables.tf file.
+- Configure TF Cloud in the backend.tf file (optional)
 
 ### Commands:
 - `go test -v -run TestInterviewChallenge` runs the terratest script
 - `terraform init` initializes the aws directory, installing all necessary plugins.
-- `terraform plan` syncs `terraform.tfstate` file against actual cloud state, shows the changes needed to make to the cloud (but doesn't do anything).
+- `terraform plan` syncs `terraform.tfstate` file (or TF Cloud state) against actual cloud state, shows the changes needed to make to the cloud (but doesn't do anything).
 - `terraform apply` applies the planned changes to the cloud.
