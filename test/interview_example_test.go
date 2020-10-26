@@ -15,10 +15,10 @@ func TestInterviewChallenge(t *testing.T) {
 	// TODO: Pick a random AWS region to test in. This helps ensure your code works in all regions.
 	// awsRegion := aws.GetRandomStableRegion(t, nil, nil)
 
+	// Adjust this settings related to variables.tf
+	awsRegion := "us-east-1"
 	expectedNameTag := "Flugel"
 	expectedOwnerTag := "InfraTeam"
-
-	awsRegion := "us-east-1"
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located

@@ -13,13 +13,14 @@
  - Only AWS cloud is supported.
 
 ## Main resources created/managed:
-- EC2 instance named 'interview_challenge'
-- S3 bucket challenge.interview.flugel.it
+- VPC named 'VPC_IC' in us-east-1
+- EC2 instance inside us-east-1a AZ
+- S3 bucket named challenge.interview.flugel.it
 
 ## How to use this example:
 - [Install Terraform](https://www.terraform.io/downloads.html). It's just a binary, you leave it anywhere under the PATH variable.
 - Configure AWS credentials in ~/.aws/ or export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
-- Configure settings in the variables.tf file.
+- Configure settings in the variables.tf file (region, AZs, bucket name, etc.). Check if Terratest test module must be adjusted afterwards.
 - Configure TF Cloud in the backend.tf file (optional)
 
 ## Commands:
