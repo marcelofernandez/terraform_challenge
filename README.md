@@ -4,9 +4,9 @@
  - Creates a new VPC using 10.0.x.0/24 addresses in three different AZs
  - Creates a new EC2 instance inside this VPC
  - Creates a SG attached to the EC2 instance which only allows incoming SSH traffic.
- - Creates an S3 bucket [WIP]
+ - Creates an S3 bucket
  - Every resource has Name = 'Flugel' and Owner = 'InfraTeam' tag names.
- - Terratest script included [WIP]
+ - Terratest script included
 
 ## TODO:
  - Github Actions flow definition, plus previous linting and testing.

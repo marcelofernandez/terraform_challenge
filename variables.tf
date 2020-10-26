@@ -24,6 +24,13 @@ variable "vpc_public_subnets" {
   }
 }
 
+# S3 bucket name
+variable "tag_bucket_name" {
+  description = "The Name tag to set for the S3 Bucket."
+  type        = string
+  default     = "challenge.interview.flugel.it"
+}
+
 # Dinamically search latest Ubuntu 20.04 AMIs
 data "aws_ami" "ubuntu" {
   most_recent = true

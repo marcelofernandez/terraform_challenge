@@ -17,3 +17,15 @@ resource "aws_instance" "interview_challenge" {
 
   tags = local.common_tags
 }
+
+# S3 bucket definitions
+resource "aws_s3_bucket" "interview_challenge_bucket" {
+  bucket = var.tag_bucket_name
+  acl    = "private"
+
+  versioning {
+    enabled = true
+  }
+
+  tags = local.common_tags
+}

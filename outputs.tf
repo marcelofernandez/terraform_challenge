@@ -6,6 +6,6 @@ output "interview_challenge_private_ip" {
   value = aws_instance.interview_challenge.private_ip
 }
 
-output "inteview_challgenge_instance_id" {
+output "interview_challgenge_instance_id" {
   value = aws_instance.interview_challenge.id
 }
