@@ -22,8 +22,14 @@
 - Configure settings in the variables.tf file.
 - Configure TF Cloud in the backend.tf file (optional)
 
-### Commands:
-- `go test -v -run TestInterviewChallenge` runs the terratest script
+## Commands:
 - `terraform init` initializes the aws directory, installing all necessary plugins.
 - `terraform plan` syncs `terraform.tfstate` file (or TF Cloud state) against actual cloud state, shows the changes needed to make to the cloud (but doesn't do anything).
 - `terraform apply` applies the planned changes to the cloud.
+- When you're done, run `terraform destroy`.
+
+## Running automated tests against this module
+- Install [Golang](https://golang.org/) and make sure this code is checked out into your `GOPATH`.
+- `cd test`
+- `dep ensure`
+- `go test -v -run TestInterviewChallenge`
