@@ -1,22 +1,12 @@
-###########################
-###########################
-## Linter GitHub Actions ##
-###########################
-###########################
 name: Lint Code Base
-
-#
-# Documentation:
-# https://help.github.com/en/articles/workflow-syntax-for-github-actions
-#
 
 #############################
 # Start the job on all push #
 #############################
 on:
   push:
-    branches-ignore: [master]
     # Remove the line above to run when pushing to master
+    branches-ignore: [master]
   pull_request:
     branches: [master]
 
@@ -55,3 +45,5 @@ jobs:
           # Terrascan will complain about 22 port open to the Internet and S3 bucket with no access policy.
           # This is just a test, we'll disable it this time.
           VALIDATE_TERRAFORM_TERRASCAN: false
+          # TODO: Execute golangci-lint direcly in the next step
+          VALIDATE_GO: false
