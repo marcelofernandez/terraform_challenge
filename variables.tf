@@ -1,22 +1,37 @@
-variable "aws_region" {
+# AWS VPC configuration
+variable aws_region {
   description = "The AWS region to deploy into"
   type        = string
   default     = "us-east-1"
 }
 
-variable "res_name" {
-  description = "The Name tag to set for the resources created"
+variable "vpc_name" {
+  description = "The main VPC name"
+  default     = "VPC_IC"
+}
+
+variable "vpc_cidr" {
+  description = "The VPC CIDR to use"
+  default     = "10.0.0.0/16"
+}
+
+variable "vpc_public_subnets" {
+  type = map
+  default = {
+    us-east-1a = "10.0.1.0/24"
+    us-east-1b = "10.0.2.0/24"
+    us-east-1c = "10.0.3.0/24"
+  }
+}
+
+# S3 bucket name
+variable "tag_bucket_name" {
+  description = "The Name tag to set for the S3 Bucket."
   type        = string
-  default     = "Flugel"
+  default     = "challenge.interview.flugel.it"
 }
 
-variable "res_owner" {
-  description = "The owner of the resources created"
-  type = string
-  default = "InfraTeam"
-}
-
-# Dinamically search the latest Ubuntu 20.04 AMIs
+# Dinamically search latest Ubuntu 20.04 AMIs
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"] # Canonical
